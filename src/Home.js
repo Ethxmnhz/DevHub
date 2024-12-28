@@ -92,8 +92,10 @@ const Home = () => {
 
             {/* Floating Chat Icon */}
             <div className="chat-icon" onClick={toggleChat}>
-                <i className="icon chat-icon"></i>
-            </div>
+    <i className="fa fa-comments"></i> {/* FontAwesome chat icon */}
+    <span>Chat</span> {/* Text next to the icon */}
+</div>
+
 
             {/* Chat Window */}
             {isChatOpen && (

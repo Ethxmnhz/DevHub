@@ -510,3 +510,25 @@ body {
 .chat-input button:hover {
     background-color: #0056b3;
 }
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-icon .fa {
+    margin-right: 8px; /* Space between the icon and text */
+    font-size: 20px; /* Adjust icon size */
+}
+
+.chat-icon span {
+    font-size: 14px; /* Adjust text size */
+    font-weight: bold;
+}
