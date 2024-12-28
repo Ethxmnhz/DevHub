@@ -54,7 +54,7 @@ const Home = () => {
                 </div>
                 <div className="navbar-right">
                     {user && <p className="user-email">{user.email}</p>}
-                    <button onClick={handleLogout} className="logout-button">Logout</button>
+                    <button onClick={handleLogout} className="logout-button">Login/Logout</button>
                 </div>
             </nav>
 
