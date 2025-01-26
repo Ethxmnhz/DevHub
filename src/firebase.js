@@ -1,7 +1,8 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getDatabase, ref, set, push, get, child } from 'firebase/database';
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set, push, get, child } from "firebase/database";
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDX25nwzQc-STovWztgtw2aCycvWXJxA3Y",
     authDomain: "dash-13064.firebaseapp.com",
@@ -13,10 +14,22 @@ const firebaseConfig = {
     measurementId: "G-78JL7PXFPJ"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize Firebase services
 const auth = getAuth(app);
 const database = getDatabase(app);
+
+// Function to log in
+const loginWithEmailAndPassword = async (email, password) => {
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        return userCredential;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
 
 // Function to send a new message to Firebase
 const sendMessage = (projectId, userEmail, message) => {
@@ -40,4 +53,4 @@ const fetchMessages = (projectId, callback) => {
     });
 };
 
-export { auth, database, sendMessage, fetchMessages };
+export { auth, loginWithEmailAndPassword, database, sendMessage, fetchMessages };

@@ -69,11 +69,16 @@ const Home = () => {
                     <h3>Editor</h3>
                     <p>Collaborate on documents and code in real-time.</p>
                 </div>
-                <div className="feature-card">
+                <div
+                    className="feature-card"
+                    onClick={() => navigate("/videochat")}
+                    style={{ cursor: "pointer" }}
+                >
                     <i className="icon video-icon"></i>
                     <h3>Video Meet</h3>
                     <p>Connect with your team via high-quality video meetings.</p>
                 </div>
+
                 <div
                     className="feature-card"
                     onClick={() => navigate("/ProjectManagementPage")}
@@ -92,9 +97,9 @@ const Home = () => {
 
             {/* Floating Chat Icon */}
             <div className="chat-icon" onClick={toggleChat}>
-    <i className="fa fa-comments"></i> {/* FontAwesome chat icon */}
-    <span>Chat</span> {/* Text next to the icon */}
-</div>
+                <i className="fa fa-comments"></i> {/* FontAwesome chat icon */}
+                <span>Chat</span> {/* Text next to the icon */}
+            </div>
 
 
             {/* Chat Window */}
